@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Ambassador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   
@@ -105,10 +106,12 @@
     document.querySelector('form').addEventListener('submit', submitForm);
   </script>
  
- <div class="formbold-main-wrapper">
-    <div class="formbold-form-wrapper">
-      
-      <img style="width: 400px;" src="img/isrc logo.png">
+ <div class="formbold-main-wrapper w-screen p-0">
+    <div class="formbold-form-wrapper ">
+      <div class="flex items-center justify-center">
+
+        <img class="w-[200px] sm:w-[400px]  " src="img/isrc logo.png">
+      </div>
   
       <form>
         <div class="formbold-form-title">
@@ -117,29 +120,31 @@
             Thank you for your interest in becoming a Student Ambassador for the International STEM Robotics Championship (ISRC). Please fill out the following form with accurate information to help us understand your background and motivation. 
           </p>
         </div>
-  
-        <div class="formbold-input-flex">
-          <div>
-            <label for="firstname" class="formbold-form-label">
-              First name
-            </label>
-            <input
-              type="text"
-              name="firstname"
-              id="firstname"
-              class="formbold-form-input"
-            />
-          </div>
-          <div>
-            <label for="lastname" class="formbold-form-label"> Last name </label>
-            <input
-              type="text"
-              name="lastname"
-              id="lastname"
-              class="formbold-form-input"
-            />
-          </div>
-        </div>
+
+
+    <div class="grid grid-cols-1 formbold-input-flex ">
+      <div>
+        <label for="firstname" class="formbold-form-label">
+          First name
+        </label>
+        <input
+        type="text"
+        name="firstname"
+        id="firstname"
+        class="formbold-form-input"
+        />
+      </div>
+      <div>
+        <label for="lastname" class="formbold-form-label"> Last name </label>
+        <input
+        type="text"
+        name="lastname"
+        id="lastname"
+        class="formbold-form-input"
+        />
+      </div>
+    </div>
+ 
   
         <div class="formbold-input-flex">
           <div>
