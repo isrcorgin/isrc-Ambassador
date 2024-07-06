@@ -193,19 +193,20 @@
     });
   </script>
  <div class="formbold-main-wrapper w-screen p-0 bg-red-100">
-    <div class="formbold-form-wrapper  rounded-xl shadow-xl ">
-      <div class="flex items-center justify-center">
+  <div class="formbold-form-wrapper rounded-xl shadow-xl w-full max-w-[95%] mx-auto">
+    <div class="flex items-center justify-center">
         <img class="w-[200px] sm:w-[400px] " src="img/isrc logo.png">
       </div>
   
       <form>
         <div class="formbold-form-title">
-          <h2 class="">Student Ambassador</h2>
-          <p>
+          <h2 class="text-center">Student Ambassador</h2>
+          <p class="text-center">
             Thank you for your interest in becoming a Student Ambassador for the International STEM Robotics Championship (ISRC). Please fill out the following form with accurate information to help us understand your background and motivation. 
           </p>
         </div>
-
+        <hr>
+<br>
         <div class="grid grid-cols-1 formbold-input-flex ">
           <div>
             <label for="firstname" class="formbold-form-label">
@@ -417,14 +418,16 @@
         
         <div class="formbold-mb-3">
           <label for="dateSelect" class="formbold-form-label">
-            Select Date
+            Select InterView Time
           </label>
           <select name="dateSelect" id="dateSelect" class="formbold-form-input">
             <!-- Dates will be populated here dynamically from Firebase -->
           </select>
         </div>
-  
-        <button class="formbold-btn">Submit</button>
+  <div class="items-center justify-center flex">
+
+    <button class="formbold-btn">Submit Ambassador Form</button>
+  </div>
       </form>
     </div>
   </div>
@@ -461,7 +464,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 48px;
+    padding: 48px 0px;
   }
   .formbold-input-radio-wrapper {
     margin-bottom: 28px;
