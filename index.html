@@ -14,7 +14,7 @@
 </head>
 <body>
   
-  <script type="module">
+<script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
     import { getDatabase, ref, push, set, get, remove, onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
    
@@ -206,28 +206,31 @@
   
       <form>
         <div class="formbold-form-title">
-          <h2 class="text-center">Student Ambassador</h2>
+          <h2 class="text-center">Campus Ambassador</h2>
           <p class="text-center">
-            Thank you for your interest in becoming a Student Ambassador for the International STEM Robotics Championship (ISRC). Please fill out the following form with accurate information to help us understand your background and motivation. 
+            Thank you for your interest in becoming a Campus Ambassador for the International STEM Robotics Championship (ISRC). Please fill out the following form with accurate information to help us understand your background and motivation. 
           </p>
         </div>
         <hr>
 <br>
+
         <div class="grid grid-cols-1 formbold-input-flex ">
           <div>
             <label for="firstname" class="formbold-form-label">
-              First name
+              First name  <span class="text-red-600 text-[18px]">*</span>
             </label>
             <input
+            required
               type="text"
               name="firstname"
               id="firstname"
               class="formbold-form-input"
-            />
+            /> 
           </div>
           <div>
-            <label for="lastname" class="formbold-form-label"> Last name </label>
+            <label for="lastname" class="formbold-form-label"> Last name  <span class="text-red-600 text-[18px]">*</span></label>
             <input
+            required
               type="text"
               name="lastname"
               id="lastname"
@@ -238,8 +241,9 @@
  
         <div class="formbold-input-flex">
           <div>
-            <label for="email" class="formbold-form-label"> Email </label>
+            <label for="email" class="formbold-form-label"> Email  <span class="text-red-600 text-[18px]">*</span></label>
             <input
+            required
               type="email"
               name="email"
               id="email"
@@ -247,8 +251,9 @@
             />
           </div>
           <div>
-            <label for="phone" class="formbold-form-label"> Phone number </label>
+            <label for="phone" class="formbold-form-label"> Phone number  <span class="text-red-600 text-[18px]">*</span></label>
             <input
+            required
               type="text"
               name="phone"
               id="phone"
@@ -259,9 +264,10 @@
   
         <div class="formbold-mb-3">
           <label for="state" class="formbold-form-label">
-            State 
+            State  <span class="text-red-600 text-[18px]">*</span>
           </label>
           <input
+          required
             type="text"
             name="state"
             id="state"
@@ -271,9 +277,10 @@
   
         <div class="formbold-mb-3">
           <label for="city" class="formbold-form-label">
-            City
+            City <span class="text-red-600 text-[18px]">*</span>
           </label>
           <input
+          required
             type="text"
             name="city"
             id="city"
@@ -282,22 +289,24 @@
         </div>
         <div class="formbold-mb-3">
           <label for="collage" class="formbold-form-label">
-            College/University
+            College  <span class="text-red-600 text-[18px]">*</span>
           </label>
           <input
+          required
             type="text"
             name="collage"
             id="collage"
-            class="formbold-form-input"
+            class="formbold-form-input" 
           />
         </div>
   
         <div class="formbold-input-radio-wrapper">
-          <label class="formbold-form-label"> Year of Study: </label>
+          <label class="formbold-form-label"> Year of Study: <span class="text-red-600 text-[18px]">*</span> </label>
   
           <div class="formbold-radio-group">
             <label class="formbold-radio-label">
               <input
+              required
                 class="formbold-input-radio"
                 type="radio"
                 name="jobtitle"
@@ -346,9 +355,10 @@
   
         <div class="formbold-mb-3">
           <label for="Degree-program" class="formbold-form-label">
-            Degree Program
+            Degree Program  <span class="text-red-600 text-[18px]">*</span>
           </label>
           <input
+          required
             type="text"
             name="Degree-program"
             id="Degree-program"
@@ -357,7 +367,7 @@
         </div>
         <div class="formbold-mb-3">
           <label for="message1" class="formbold-form-label">
-            1. Why do you want to become a Student Ambassador for ISRC?
+            1. Why do you want to become a Campus Ambassador for ISRC?
           </label>
           <input
             type="text"
@@ -391,8 +401,9 @@
         <div class="formbold-mb-3">
           <label for="message4" class="formbold-form-label">
             4. Describe any previous involvement in student organizations or extracurricular activities.
-          </label>
+          <span class="text-red-600 text-[18px]">*</span></label>
           <input
+          required
             type="text"
             name="message4"
             id="message4"
@@ -424,7 +435,7 @@
         
         <div class="formbold-mb-3">
           <label for="dateSelect" class="formbold-form-label">
-            Select InterView Time
+            Select InterView Time <span class="text-red-600 text-[18px]">*</span>
           </label>
           <select name="dateSelect" id="dateSelect" class="formbold-form-input">
             <!-- Dates will be populated here dynamically from Firebase -->
@@ -523,6 +534,7 @@
     color: #536387;
     outline: none;
     resize: none;
+    white-space: normal;
   }
   .formbold-form-input:focus {
     border-color: #6a64f1;
