@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta property="og:image" content="https://raw.githubusercontent.com/isrcorgin/isrc-Ambassador/main/img/thumbnail.jpeg">
-    <meta property="og:title" content="Campus Ambassador ">
-    <meta property="og:description" content="Are you an active student looking to make a difference? 
-     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="International STEM & Robotic Championship">
-    
-    <title>Student Ambassadors</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content="https://raw.githubusercontent.com/isrcorgin/isrc-Ambassador/main/img/thumbnail.jpeg">
+  <meta property="og:title" content="Campus Ambassador ">
+  <meta property="og:description" content="Are you an active student looking to make a difference?">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="International STEM & Robotic Championship">
+  <title>Student Ambassadors</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  
-<script type="module">
+  <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
     import { getDatabase, ref, push, set, get, remove, onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
-   
-    // Your Firebase configuration
+    
     const firebaseConfig = {
       apiKey: "AIzaSyCW5aWx5wPP9SYFTws-Wv05m2FfYrlCg78",
       authDomain: "isrc-form.firebaseapp.com",
@@ -29,48 +26,39 @@
       appId: "1:117216420901:web:27d4db1438e5341be0cbcc",
       measurementId: "G-VFZ18PQ87Q"
     };
-   
-    // Initialize Firebase
+    
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
-   
-    // Function to handle form submission
+    
     function submitForm(event) {
-      event.preventDefault(); // Prevent default form submission
-   
-      // Get form values using querySelector for consistency
-      const fullName = document.querySelector('input[name="firstname"]').value + ' ' + document.querySelector('input[name="lastname"]').value;
-      const email = document.querySelector('input[name="email"]').value;
-      const phone = document.querySelector('input[name="phone"]').value;
-      const state = document.querySelector('input[name="state"]').value;
-      const city = document.querySelector('input[name="city"]').value;
-      const collage = document.querySelector('input[name="collage"]').value;
-      const yearofStudy = document.querySelector('input[name="jobtitle"]:checked').value;
-      const Degreeprogram = document.querySelector('input[name="Degree-program"]').value;
-      const message1 = document.querySelector('input[name="message1"]').value;
-      const message2 = document.querySelector('input[name="message2"]').value;
-      const message3 = document.querySelector('input[name="message3"]').value;
-      const message4 = document.querySelector('input[name="message4"]').value;
-      const message5 = document.querySelector('input[name="message5"]').value;
-      const message6 = document.querySelector('input[name="message6"]').value;
-      const selectedDate = document.querySelector('select[name="dateSelect"]').value;
-   
-      // Save message to Firebase Realtime Database
+      event.preventDefault();
+    
+      const fullName = (document.querySelector('input[name="firstname"]')?.value || '') + ' ' + (document.querySelector('input[name="lastname"]')?.value || '');
+      const email = document.querySelector('input[name="email"]')?.value || '';
+      const phone = document.querySelector('input[name="phone"]')?.value || '';
+      const state = document.querySelector('input[name="state"]')?.value || '';
+      const city = document.querySelector('input[name="city"]')?.value || '';
+      const collage = document.querySelector('input[name="collage"]')?.value || '';
+      const yearofStudy = document.querySelector('input[name="jobtitle"]:checked')?.value || '';
+      const Degreeprogram = document.querySelector('input[name="Degree-program"]')?.value || '';
+      const message1 = document.querySelector('input[name="message1"]')?.value || '';
+      const message2 = document.querySelector('input[name="message2"]')?.value || '';
+      const message3 = document.querySelector('input[name="message3"]')?.value || '';
+      const message4 = document.querySelector('input[name="message4"]')?.value || '';
+      const message5 = document.querySelector('input[name="message5"]')?.value || '';
+      const message6 = document.querySelector('input[name="message6"]')?.value || '';
+      const selectedDate = document.querySelector('select[name="dateSelect"]')?.value || '';
+    
       saveMessage(fullName, email, phone, state, city, collage, yearofStudy, Degreeprogram, message1, message2, message3, message4, message5, message6, selectedDate);
-   
-      // Update selected date type to 'yes' in Firebase
       updateDateType(selectedDate);
-   
-      // Clear form fields after submission (optional)
       clearForm();
     }
-   
-    // Function to save message to Firebase Realtime Database
+    
     function saveMessage(fullName, email, phone, state, city, collage, yearofStudy, Degreeprogram, message1, message2, message3, message4, message5, message6, selectedDate) {
       const messagesRef = ref(database, 'messages');
       const newMessageRef = push(messagesRef);
       const newMessageKey = newMessageRef.key;
-  
+    
       set(newMessageRef, {
         key: newMessageKey,
         fullName: fullName,
@@ -198,7 +186,7 @@
       deleteDate(selectedDate);
     });
   </script>
-<div class="formbold-main-wrapper w-screen p-0 bg-red-100">
+ <div class="formbold-main-wrapper w-screen p-0 bg-red-100">
   <div class="formbold-form-wrapper rounded-xl shadow-xl w-full max-w-[95%] mx-auto">
     <div class="flex items-center justify-center">
         <img class="w-[200px] sm:w-[400px] " src="img/isrc logo.png">
@@ -404,7 +392,7 @@
             4. Describe any previous involvement in student organizations or extracurricular activities.
           </label>
           <input
-        
+         
             type="text"
             name="message4"
             id="message4"
@@ -610,10 +598,6 @@
 
 </style>
 </html>
-
-
- 
-
 
  
 
